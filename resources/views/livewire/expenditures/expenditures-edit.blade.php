@@ -1,5 +1,5 @@
-<div>
-    <div class="container">
+<div class="container">
+    <div class="page-inner">
         <div class="card border">
             <div class="row">
                 <div class="col-sm-6">

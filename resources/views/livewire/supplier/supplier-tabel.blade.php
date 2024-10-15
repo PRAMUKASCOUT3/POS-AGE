@@ -1,5 +1,6 @@
-<div>
-    <div class="container">
+
+<div class="container">
+    <div class="page-inner">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Data Supplier <i class="fas fa-dolly-flatbed"></i></h5>

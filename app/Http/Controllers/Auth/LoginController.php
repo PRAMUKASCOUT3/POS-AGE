@@ -31,7 +31,7 @@ class LoginController extends Controller
     {
         if (auth()->user()->isAdmin == 1) {
             toastr()->success('Anda Berhasil login!');
-            return '/home';
+            return '/';
         }
         toastr()->success('Anda Berhasil login!');
         return '/';

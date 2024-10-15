@@ -1,5 +1,5 @@
-<div>
-    <div class="container">
+<div class="container">
+    <div class="page-inner">
         <div class="card border">
             <div class="row">
                 <div class="col-sm-6">
@@ -7,7 +7,7 @@
                         <h5 class="card-header bg-primary text-white">Data Lama</h5>
                     </div>
                     <div class="card-body">
-                        <div class="md-3">
+                        <div class="mb-3">
                             <label for="">Nama Kategori <i class="fas fa-file-signature"></i></label>
                             <input type="text" class="form-control" value="{{ $category->name }}" readonly>
                         </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="card-body">
                         <form wire:submit="update">
-                            <div class="md-3">
+                            <div class="mb-3">
                                 <label>Nama Kategori <i class="fas fa-file-signature"></i></label>
                                 <input type="text" class="form-control" wire:model="name" required>
                                 @error('name') <span class="text-danger">{{ $message }}</span> @enderror

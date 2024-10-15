@@ -1,8 +1,8 @@
-<div>
-    <div class="container">
+<div class="container">
+    <div class="page-inner">
         <div class="card">
+            <h5 class="card-header bg-primary text-white">Form Tambah Produk</h5>
             <div class="card-body">
-                <h5 class="card-header bg-primary text-white">Form Tambah Produk</h5>
                 <form wire:submit="save">
                     <input type="text" wire:mode="code" hidden>
                     <div class="mt-3">
@@ -71,7 +71,7 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
                 </form>
             </div>
         </div>

@@ -1,5 +1,5 @@
-<div>
-    <div class="container mt-5">
+<div class="container">
+    <div class="page-inner">
         <div class="card">
             <div class="card-body">
                 <!-- Pencarian Barang -->
@@ -143,5 +143,5 @@
             </div>
         </div>
     </div>
-
 </div>
+
