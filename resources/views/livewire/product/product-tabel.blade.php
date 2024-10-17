@@ -2,9 +2,9 @@
     <div class="page-inner">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Data Produk</h5>
+                <h5 class="card-title mb-3">Data Produk <li class="fas fa-boxes"></li></h5>
                 <div class="table-responsive">
-                    <a href="{{ route('product.create') }}" class="btn btn-primary">Tambah Data</a>
+                    <a href="{{ route('product.create') }}" class="btn btn-primary mb-4"><li class="fas fa-plus"></li> Tambah Data</a>
                     <table id="example" class="table table-striped mt-2" style="width: 120%">
                         <thead>
                             <tr>

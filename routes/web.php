@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\CategoryController;

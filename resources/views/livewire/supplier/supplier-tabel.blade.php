@@ -9,7 +9,7 @@
                     <table id="example" class="table">
                         <thead>
                             <tr>
-                                <th>Nama <i class="fas fa-file-signature"></i></th>
+                                <th>Nama Supplier <i class="fas fa-file-signature"></i></th>
                                 <th>Nomor HP <i class="fas fa-phone"></i></th>
                                 <th>Alamat <i class="fas fa-map-marked-alt"></i></th>
                                 <th>Aksi <i class="fas fa-cogs"></i></th>
@@ -22,14 +22,16 @@
                                 <td>{{ $supplier->contact_person }}</td>
                                 <td>{{ $supplier->address }}</td>
                                 <td>
-                                    <a href="{{ route('supplier.edit',$supplier->id) }}" class="btn btn-info btn-sm ">Edit</a>
-                                    <button 
-                                    class="btn btn-danger btn-sm" 
-                                    wire:click="delete({{ $supplier->id }})"
-                                    onclick="confirm('Apakah kamu yakin ingin menghapus data ini?') || event.stopImmediatePropagation();"
-                                >
-                                    Hapus
-                                </button>
+                                    <div class="d-flex justify-content-beetwen">
+                                        <a href="{{ route('supplier.edit',$supplier->id) }}" class="btn btn-info btn-sm " style="margin-right: 10px">Edit</a>
+                                        <button 
+                                        class="btn btn-danger btn-sm" 
+                                        wire:click="delete({{ $supplier->id }})"
+                                        onclick="confirm('Apakah kamu yakin ingin menghapus data ini?') || event.stopImmediatePropagation();"
+                                    >
+                                        Hapus
+                                    </button>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
