@@ -7,12 +7,13 @@ use Livewire\Component;
 
 class UserEdit extends Component
 {
-    public $user_id, $name ,$email;
+    public $user_id, $name ,$email, $password;
     public function mount($user)
     {
         $this->user_id = $user->id;
         $this->name = $user->name;
         $this->email = $user->email;
+        $this->password = $user->password;
     }
 
     public function update()
@@ -20,11 +21,13 @@ class UserEdit extends Component
         $this->validate([
             'name' => ['required','string','max:255'],
             'email' => ['required', 'email','max:255', 'unique:users,email,'. $this->user_id],
+            'password' => ['string','min:8']
         ]);
 
         $user = User::find($this->user_id);
         $user->name = $this->name;
         $user->email = $this->email;
+        $user->password = $this->password;
         $user->save();
 
         toastr()->success( 'Data Berhasil Diubah');

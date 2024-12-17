@@ -10,6 +10,10 @@ use PDF;
 
 class UserController extends Controller
 {
+    public function user()
+    {
+        return view('user.index');
+    }
     public function edit($id)
     {
         $user = User::find($id);

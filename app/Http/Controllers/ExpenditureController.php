@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ExpenditureController extends Controller
 {
+    public function index()
+    {
+        return view('expenditures.index');
+    }
     public function edit($id)
     {
         $expenditure = Expenditure::find($id);

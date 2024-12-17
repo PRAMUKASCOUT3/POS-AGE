@@ -15,6 +15,10 @@
                             <label for="">Email <i class="fas fa-envelope"></i></label>
                             <input type="text" class="form-control"  value="{{ $user->email }}" readonly>
                         </div>
+                        <div class="mb-3">
+                            <label for="">Password <i class="fas fa-key"></i></label>
+                            <input type="password" class="form-control"  value="{{ $user->password }}" readonly>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -27,10 +31,23 @@
                                 <label for="">Nama Pengguna / Kasir <i class="fas fa-users"></i></label>
                                 <input type="text" class="form-control"  wire:model="name" >
                             </div>
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <div class="mb-3">
                                 <label for="">Email <i class="fas fa-envelope"></i></label>
                                 <input type="email" class="form-control"  wire:model="email" >
                             </div>
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                            <div class="mb-3">
+                                <label for="">Password <i class="fas fa-key"></i></label>
+                                <input type="password" class="form-control"  wire:model="password" >
+                            </div>
+                            @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                             <button type="submit" class="btn btn-primary mt-2">Update</button>
                         </form>
                     </div>
