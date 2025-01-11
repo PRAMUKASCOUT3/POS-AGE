@@ -29,8 +29,8 @@ class UserFactory extends Factory
             'name' => $this->faker->name,
             'code' => $this->faker->unique()->numerify('########'),
             'email' => $this->faker->unique()->safeEmail,
-            'password' => Hash::make('password'), // default password
-            'isAdmin' => 0,  // Set isAdmin to 0 by default
+            'password' => substr(Hash::make('password'), 0, 60), // Potong hash bcrypt
+            'isAdmin' => 0, // Set isAdmin to 0 by default
         ];
     }
 }

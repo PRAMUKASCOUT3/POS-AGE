@@ -94,17 +94,17 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">Keuntungan Penjualan <i class="fas fa-hand-holding-usd"></i></div>
+                                <div class="card-title">Keuntungan penjualan <i class="fas fa-calendar"></i></div>
                             </div>
                         </div>
                         <div class="card-body pb-0">
                             <div class="mb-4 mt-2">
-                                <h1>Rp. {{ number_format($total_semua) }}</h1>
+                                <h1>Rp. {{ number_format($profitThisMonth) }}</h1>
                             </div>
                         </div>
                     </div>
-
                 </div>
+                
             </div>
         </div>
     </div>

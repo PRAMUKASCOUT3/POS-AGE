@@ -11,99 +11,63 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                margin: 0;
+                font-size: 12px;
             }
-        
+    
             .container {
-                margin-top: 10px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                border: 1px solid #ddd;
             }
-        
+    
             .card-header {
-                background-color: white;
-                color: black;
-                padding: 1.5rem;
-                border-bottom: 1px solid #dee2e6;
+                background-color: #007bff;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
                 text-align: center;
+                font-size: 18px;
             }
-        
-            .card-header h2 {
-                font-size: 1.8rem;
-                font-weight: bold;
-                margin: 0;
-            }
-        
+    
             .table {
                 width: 100%;
                 border-collapse: collapse;
-                table-layout: fixed; /* Agar kolom punya lebar tetap */
+                margin-top: 20px;
             }
-        
+    
             .table th,
             .table td {
-                padding: 0.5rem;
-                vertical-align: middle;
                 border: 1px solid #dee2e6;
-                word-wrap: break-word; /* Supaya teks tidak keluar dari kolom */
-                font-size: 10px; /* Ukuran teks lebih kecil */
+                padding: 8px;
+                text-align: center;
+                vertical-align: middle;
             }
-        
+    
             .table th {
                 background-color: #f8f9fa;
-                color: black;
-                text-align: center;
-            }
-        
-            .table-striped tbody tr:nth-of-type(odd) {
-                background-color: rgba(0, 123, 255, 0.1);
-            }
-        
-            /* Mengatur lebar kolom secara proporsional */
-            th:nth-child(1), td:nth-child(1) {
-                width: 5%;
-            }
-        
-            th:nth-child(2), td:nth-child(2) {
-                width: 10%;
-            }
-        
-            th:nth-child(3), td:nth-child(3) {
-                width: 12%;
-            }
-        
-            th:nth-child(4), td:nth-child(4) {
-                width: 18%;
-            }
-        
-            th:nth-child(5), td:nth-child(5) {
-                width: 15%;
-            }
-        
-            th:nth-child(6), td:nth-child(6) {
-                width: 7%;
-            }
-        
-            th:nth-child(7), td:nth-child(7) {
-                width: 8%;
-            }
-        
-            th:nth-child(8), td:nth-child(8) {
-                width: 10%;
-            }
-        
-            .table tfoot td {
                 font-weight: bold;
-                text-align: right;
-                padding-right: 10px;
             }
-        
-            .tfoot-total {
-                text-align: right;
-                width: 20%; /* Menambah lebar untuk kolom Total */
+    
+            .tfoot td {
+                font-weight: bold;
+                background-color: #f1f1f1;
             }
-        
+    
             .signature {
-                margin-top: 2rem;
+                margin-top: 30px;
                 text-align: right;
+            }
+    
+            .signature span {
+                display: inline-block;
+            }
+    
+            .signature u {
+                margin-top: 30px;
+                display: block;
+                font-weight: bold;
             }
         </style>
         

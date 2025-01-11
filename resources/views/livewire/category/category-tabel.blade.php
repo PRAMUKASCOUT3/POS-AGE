@@ -18,13 +18,13 @@
                                 <td>{{ $item->name }}</td>
                                 <td>
                                     <a href="{{ route('category.edit',$item->id) }}" class="btn btn-info btn-sm ">Edit</a>
-                                    <button 
-                                    class="btn btn-danger btn-sm" 
-                                    wire:click="delete({{ $item->id }})"
-                                    onclick="confirm('Apakah kamu yakin ingin menghapus data ini?') || event.stopImmediatePropagation();"
-                                >
-                                    Hapus
-                                </button>
+                                    <form id="deleteForm{{ $item->id }}" class="d-inline"
+                                        action="{{ route('category.delete', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="button" class="btn btn-danger btn-sm"
+                                            onclick="confirmDelete({{ $item->id }})">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

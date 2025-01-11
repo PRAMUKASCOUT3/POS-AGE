@@ -24,13 +24,13 @@
                                 <td>
                                     <div class="d-flex justify-content-beetwen">
                                         <a href="{{ route('supplier.edit',$supplier->id) }}" class="btn btn-info btn-sm " style="margin-right: 10px">Edit</a>
-                                        <button 
-                                        class="btn btn-danger btn-sm" 
-                                        wire:click="delete({{ $supplier->id }})"
-                                        onclick="confirm('Apakah kamu yakin ingin menghapus data ini?') || event.stopImmediatePropagation();"
-                                    >
-                                        Hapus
-                                    </button>
+                                        <form id="deleteForm{{ $supplier->id }}" class="d-inline"
+                                            action="{{ route('supplier.delete', $supplier->id) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="button" class="btn btn-danger btn-sm"
+                                                onclick="confirmDelete({{ $supplier->id }})">Hapus</button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

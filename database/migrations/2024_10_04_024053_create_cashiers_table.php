@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('cashiers', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code',8);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->nullable(); //
             $table->foreignId('product_id')->constrained()->cascadeOnDelete(); //
-            $table->string('date');
-            $table->string('total_item');
-            $table->decimal('subtotal', 10, 2);
-            $table->decimal('amount_paid', 10, 2); 
-            $table->enum('status', ['completed', 'pending', 'canceled'])->default('pending'); // Status transaksi
+            $table->date('date');
+            $table->string('total_item',15);
+            $table->decimal('subtotal', 5, 2);
+            $table->decimal('amount_paid', 15, 2); 
+            $table->string('status',10); // Status transaksi
             $table->timestamps();
         });
     }

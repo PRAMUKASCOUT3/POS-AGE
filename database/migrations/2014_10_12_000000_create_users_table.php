@@ -12,17 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('code');
-            $table->string('email')->unique()->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->boolean('isAdmin');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id(); // ID sebagai primary key
+            $table->string('name', 40); // Nama dengan panjang maksimal 25 karakter
+            $table->string('code', 8); // Kode dengan panjang maksimal 8 karakter
+            $table->string('email', 35)->unique()->nullable(); // Email dengan panjang maksimal 35 karakter
+            $table->timestamp('email_verified_at')->nullable(); // Email verified
+            $table->string('password', 60); // Tingkatkan panjang kolom menjadi 60
+            $table->boolean('isAdmin'); // Indikator admin menggunakan boolean
+            $table->rememberToken(); // Token untuk remember me
+            $table->timestamps(); // created_at dan updated_at
         });
     }
+
+
 
     /**
      * Reverse the migrations.
