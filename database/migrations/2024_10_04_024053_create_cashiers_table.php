@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('cashiers', function (Blueprint $table) {
             $table->id();
-            $table->string('code',8);
+            $table->string('code',15);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->nullable(); //
             $table->foreignId('product_id')->constrained()->cascadeOnDelete(); //
             $table->date('date');
             $table->string('total_item',15);
-            $table->decimal('subtotal', 5, 2);
+            $table->decimal('subtotal', 10, 2);
             $table->decimal('amount_paid', 15, 2); 
             $table->string('status',10); // Status transaksi
             $table->timestamps();
