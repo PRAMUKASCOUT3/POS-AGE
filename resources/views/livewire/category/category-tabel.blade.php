@@ -8,13 +8,15 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nama Kategori <i class="fas fa-file-signature"></i></th>
                                 <th>Aksi <i class="fas fa-cogs"></i></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($categories as $item)
+                            @foreach($categories as $no => $item)
                             <tr>
+                                <td>{{ ++$no }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>
                                     <a href="{{ route('category.edit',$item->id) }}" class="btn btn-info btn-sm ">Edit</a>

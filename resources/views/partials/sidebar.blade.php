@@ -188,7 +188,7 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('cashier.index') }}">
-                                        <span class="sub-item">Kasir</span>
+                                        <span class="sub-item">Transaksi</span>
                                     </a>
                                 </li>
                                 <li>

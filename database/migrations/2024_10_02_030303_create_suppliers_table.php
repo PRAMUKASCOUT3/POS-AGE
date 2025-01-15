@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 25); // Name with a max length of 25
+            $table->string('name', 30); // Name with a max length of 25
             $table->string('contact_person', 15); // Contact_person with a max length of 15
             $table->string('address', 150); // Address with a max length of 100
             $table->timestamps();

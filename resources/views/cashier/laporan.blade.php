@@ -44,6 +44,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama Kasir <i class="fas fa-user"></i></th>
                                     <th>Kode Transaksi <i class="fas fa-code"></i></th>
                                     <th>Tanggal <i class="fas fa-calendar-alt"></i></th>
@@ -56,10 +57,12 @@
                             </thead>
                             <tbody>
                                 @php
+                                $no = 0;
                                     $groupedCashier = $cashier->groupBy('code');
                                 @endphp
                                 @foreach ($groupedCashier as $code => $items)
                                     <tr>
+                                        <td rowspan="{{ $items->count() }}">{{ ++$no }}</td>
                                         <td rowspan="{{ $items->count() }}">{{ $items->first()->user->name }}</td>
                                         <td rowspan="{{ $items->count() }}">{{ $code }}</td>
                                         <td rowspan="{{ $items->count() }}">{{ $items->first()->date }}</td>
