@@ -4,12 +4,12 @@
             <h5 class="card-header bg-primary text-white">Data Baru</h5>
             <div class="card-body">
                 <form wire:submit="save">
-                    <input type="text" wire:mode="code" hidden>
+                    <input type="text" wire:model="code" hidden>
                     <div class="mt-3">
                         <label for="category_id">Kategori Produk <i class="fas fa-clipboard-list"></i></label>
                         <select wire:model="category_id" id="category_id" class="form-control">
                             <option value="">==Pilih Kategori Produk==</option>
-                            @foreach ($category as $item)
+                            @foreach ($categories as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
                         </select>

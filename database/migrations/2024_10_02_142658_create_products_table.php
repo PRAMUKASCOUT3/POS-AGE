@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete(); //
-            $table->string('code',8)->unique();
-            $table->string('name',40);
-            $table->string('brand',30);
-            $table->string('stock',5);
-            $table->string('price_buy',15);
-            $table->string('price_sell',15);
-            $table->string('unit',10);
+            $table->unsignedInteger('id')->autoIncrement(); // Ubah jadi int dan auto increment
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
+            $table->string('code', 8)->unique();
+            $table->string('name', 40);
+            $table->string('brand', 30);
+            $table->string('stock', 5);
+            $table->string('price_buy', 15);
+            $table->string('price_sell', 15);
+            $table->string('unit', 20);
             $table->timestamps();
         });
     }

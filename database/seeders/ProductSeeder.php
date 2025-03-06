@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -13,10 +14,11 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('products')->insert([
+        $lastKode = Product::max('code');
+        $lastNumber = $lastKode ? intval(substr($lastKode, 2)) : 0;
+        $product = [
             [
                 'category_id' => 1, // Oli & Pelumas
-                'code' => 'OLI001',
                 'name' => 'Oli Mesin Castrol 10W-40',
                 'brand' => 'Castrol',
                 'stock' => '50',
@@ -26,7 +28,6 @@ class ProductSeeder extends Seeder
             ],
             [
                 'category_id' => 2, // Suku Cadang Mesin
-                'code' => 'SCM001',
                 'name' => 'Busi NGK',
                 'brand' => 'NGK',
                 'stock' => '200',
@@ -36,7 +37,6 @@ class ProductSeeder extends Seeder
             ],
             [
                 'category_id' => 3, // Ban & Velg
-                'code' => 'BAN001',
                 'name' => 'Ban Bridgestone 185/70 R14',
                 'brand' => 'Bridgestone',
                 'stock' => '30',
@@ -46,7 +46,6 @@ class ProductSeeder extends Seeder
             ],
             [
                 'category_id' => 4, // Aki & Baterai
-                'code' => 'AKI001',
                 'name' => 'Aki GS Astra 45Ah',
                 'brand' => 'GS Astra',
                 'stock' => '20',
@@ -56,7 +55,6 @@ class ProductSeeder extends Seeder
             ],
             [
                 'category_id' => 5, // Filter Udara
-                'code' => 'FLU001',
                 'name' => 'Filter Udara Ferrox',
                 'brand' => 'Ferrox',
                 'stock' => '100',
@@ -64,7 +62,14 @@ class ProductSeeder extends Seeder
                 'price_sell' => '150000',
                 'unit' => 'Piece',
             ],
-        ]);
+
+        ];
+        foreach ($product as $items) {
+            $lastNumber++;
+            $product['code'] = 'BR' .str_pad($lastNumber,4,'0',STR_PAD_LEFT);
+
+            Product::create($items);
+        }
         
     }
 }

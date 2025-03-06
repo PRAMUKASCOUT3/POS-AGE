@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cashiers', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('id')->autoIncrement(); // Ubah jadi int dan auto increment
             $table->string('code',15);
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->nullable(); //
-            $table->foreignId('product_id')->constrained()->cascadeOnDelete(); //
+            $table->unsignedInteger('user_id'); // Cocokkan dengan tipe categories.id
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->unsignedInteger('product_id'); // Cocokkan dengan tipe categories.id
+            $table->foreign('product_id')->references('id')->on('products')->cascadeOnDelete();            
             $table->date('date');
             $table->string('total_item',15);
             $table->decimal('subtotal', 10, 2);

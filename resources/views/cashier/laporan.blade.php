@@ -65,7 +65,7 @@
                                         <td rowspan="{{ $items->count() }}">{{ ++$no }}</td>
                                         <td rowspan="{{ $items->count() }}">{{ $items->first()->user->name }}</td>
                                         <td rowspan="{{ $items->count() }}">{{ $code }}</td>
-                                        <td rowspan="{{ $items->count() }}">{{ $items->first()->date }}</td>
+                                        <td rowspan="{{ $items->count() }}">{{ \Carbon\Carbon::parse($items->first()->date)->format('d-m-Y') }}</td>
                                         <td>{{ $items->first()->product->name }}</td>
                                         <td>{{ $items->first()->total_item }}</td>
                                         <td rowspan="{{ $items->count() }}">Rp.
