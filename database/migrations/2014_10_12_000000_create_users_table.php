@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->unsignedInteger('id')->autoIncrement(); // Ubah jadi int dan auto increment
+            $table->unsignedInteger('id_user')->autoIncrement(); // Ubah jadi int dan auto increment
             $table->string('name', 40); // Nama dengan panjang maksimal 25 karakter
             $table->string('code', 8); // Kode dengan panjang maksimal 8 karakter
             $table->string('email', 35)->unique()->nullable(); // Email dengan panjang maksimal 35 karakter

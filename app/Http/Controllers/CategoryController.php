@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function index()
+    {
+        return view('categorys.index');
+    }
     public function edit($id)
     {
         $category = Category::find($id);

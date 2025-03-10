@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
         $lastNumber = $lastKode ? intval(substr($lastKode, 2)) : 0;
         $product = [
             [
-                'category_id' => 1, // Oli & Pelumas
+                'id_category' => 1, // Oli & Pelumas
                 'name' => 'Oli Mesin Castrol 10W-40',
                 'brand' => 'Castrol',
                 'stock' => '50',
@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
                 'unit' => 'Litre',
             ],
             [
-                'category_id' => 2, // Suku Cadang Mesin
+                'id_category' => 2, // Suku Cadang Mesin
                 'name' => 'Busi NGK',
                 'brand' => 'NGK',
                 'stock' => '200',
@@ -36,7 +36,7 @@ class ProductSeeder extends Seeder
                 'unit' => 'Piece',
             ],
             [
-                'category_id' => 3, // Ban & Velg
+                'id_category' => 3, // Ban & Velg
                 'name' => 'Ban Bridgestone 185/70 R14',
                 'brand' => 'Bridgestone',
                 'stock' => '30',
@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
                 'unit' => 'Piece',
             ],
             [
-                'category_id' => 4, // Aki & Baterai
+                'id_category' => 4, // Aki & Baterai
                 'name' => 'Aki GS Astra 45Ah',
                 'brand' => 'GS Astra',
                 'stock' => '20',
@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
                 'unit' => 'Piece',
             ],
             [
-                'category_id' => 5, // Filter Udara
+                'id_category' => 5, // Filter Udara
                 'name' => 'Filter Udara Ferrox',
                 'brand' => 'Ferrox',
                 'stock' => '100',

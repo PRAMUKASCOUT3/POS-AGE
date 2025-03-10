@@ -12,9 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->unsignedInteger('id')->autoIncrement(); // Ubah jadi int dan auto increment
-            $table->unsignedInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
+            $table->unsignedInteger('id_product')->autoIncrement(); // Ubah jadi int dan auto increment
+            $table->unsignedInteger('id_category')->nullable(); // Foreign key ke categories
+            $table->foreign('id_category')
+                ->references('id_category') // Relasi ke id_category di tabel categories
+                ->on('categories')
+                ->cascadeOnDelete();
             $table->string('code', 8)->unique();
             $table->string('name', 40);
             $table->string('brand', 30);

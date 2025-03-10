@@ -36,7 +36,7 @@
                                                                 Stok: {{ $item->stock }}
                                                             </span>
                                                             <button class="btn btn-primary btn-sm"
-                                                                wire:click="addItem({{ $item->id }})">
+                                                                wire:click="addItem({{ $item->id_product }})">
                                                                 <i class="fas fa-plus"></i> Tambah
                                                             </button>
                                                         </li>
@@ -138,7 +138,7 @@
                                 </div>
 
                                 <!-- Tombol Bayar dan Reset -->
-                                <input type="text" wire:model='user_id' hidden>
+                                <input type="text" wire:model='id_user' hidden>
                                 <div class="mt-3 d-flex justify-content-end">
                                     <button class="btn btn-success me-2" wire:click="saveTransaction">Bayar <i
                                             class="fas fa-vote-yea"></i></button>

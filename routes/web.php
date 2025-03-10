@@ -35,7 +35,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/supplier/{id}/edit',[SupplierController::class, 'edit'])->name('supplier.edit');
     Route::delete('/admin/supplier/delete/{id}',[SupplierController::class, 'delete'])->name('supplier.delete');
     
-    Route::get('/admin/kategori',\App\Livewire\Category\index::class)->name('category.index');
+    Route::get('/admin/kategori',[CategoryController::class,'index'])->name('category.index');
     Route::get('/admin/kategori/{id}/edit',[CategoryController::class, 'edit'])->name('category.edit');
     Route::delete('/admin/kategori/delete/{id}',[CategoryController::class, 'delete'])->name('category.delete');
     

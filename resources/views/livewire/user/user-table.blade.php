@@ -27,14 +27,14 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>
-                                        <a href="{{ route('pengguna.edit', $user->id) }}"
+                                        <a href="{{ route('pengguna.edit', $user->id_user) }}"
                                             class="btn btn-info btn-sm ">Edit</a>
-                                            <form id="deleteForm{{ $user->id }}" class="d-inline"
-                                                action="{{ route('pengguna.delete', $user->id) }}" method="post">
+                                            <form id="deleteForm{{ $user->id_user }}" class="d-inline"
+                                                action="{{ route('pengguna.delete', $user->id_user) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="button" class="btn btn-danger btn-sm"
-                                                    onclick="confirmDelete({{ $user->id }})">Hapus</button>
+                                                    onclick="confirmDelete({{ $user->id_user }})">Hapus</button>
                                             </form>
                                     </td>
                                 </tr>

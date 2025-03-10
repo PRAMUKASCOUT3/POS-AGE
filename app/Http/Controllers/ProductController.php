@@ -48,6 +48,6 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect()->route('products.index')->with('success','Produk berhasil dihapus');
+        return redirect()->route('product.index')->with('success','Produk berhasil dihapus');
     }
 }

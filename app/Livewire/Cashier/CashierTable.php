@@ -42,7 +42,7 @@ class CashierTable extends Component
     {
         $product = Product::find($productId);
         $this->items[] = [
-            'id' => $product->id,
+            'id_product' => $product->id_product,
             'name' => $product->name,
             'price_sell' => $product->price_sell,
             'stock' => 1,
@@ -84,8 +84,8 @@ class CashierTable extends Component
         foreach ($this->items as $item) {
             $cashier = Cashier::create([
                 'code' => 'TRX-' . now()->timestamp, // Kode transaksi unik
-                'user_id' => Auth::id(),
-                'product_id' => $item['id'], // Mengambil ID produk dari item yang diiterasi
+                'id_user' => Auth::id(),
+                'id_product' => $item['id_product'],
                 'date' => now(), // Menggunakan waktu sekarang sebagai tanggal transaksi
                 'total_item' => $item['stock'], // Menyimpan jumlah item per produk
                 'subtotal' => $item['price_sell'] * $item['stock'], // Subtotal per item
@@ -94,7 +94,7 @@ class CashierTable extends Component
             ]);
 
             // Update stok produk
-            $product = Product::find($item['id']);
+            $product = Product::find($item['id_product']);
             if ($product->stock >= $item['stock']) {
                 $product->stock -= $item['stock'];
                 $product->save();

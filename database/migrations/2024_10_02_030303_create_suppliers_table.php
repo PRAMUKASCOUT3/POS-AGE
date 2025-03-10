@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('suppliers', function (Blueprint $table) {
-            $table->unsignedInteger('id')->autoIncrement(); // Ubah jadi int dan auto increment
+            $table->unsignedInteger('id_supplier')->autoIncrement(); // Ubah jadi int dan auto increment
             $table->string('name', 30); // Name with a max length of 25
             $table->string('contact_person', 15); // Contact_person with a max length of 15
             $table->string('address', 150); // Address with a max length of 100

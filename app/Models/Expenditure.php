@@ -10,6 +10,7 @@ class Expenditure extends Model
 {
     use HasFactory;
     protected $table = 'expenditures';
+    protected $primaryKey = 'id_expenditure';
     protected $fillable = [
         'date',
         'description',

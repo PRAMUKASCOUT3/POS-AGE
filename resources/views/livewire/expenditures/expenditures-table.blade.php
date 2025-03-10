@@ -24,9 +24,9 @@
                                     <td>{{ $item->description }}</td>
                                     <td>Rp. {{number_format($item->nominal)  }}</td>
                                     <td>
-                                        <a href="{{ route('expenditures.edit',$item->id) }}"
+                                        <a href="{{ route('expenditures.edit',$item->id_expenditure) }}"
                                             class="btn btn-info btn-sm ">Edit</a>
-                                        <button class="btn btn-danger btn-sm" wire:click="delete({{ $item->id }})"
+                                        <button class="btn btn-danger btn-sm" wire:click="delete({{ $item->id_expenditure }})"
                                             onclick="confirm('Apakah kamu yakin ingin menghapus data ini?') || event.stopImmediatePropagation();">
                                             Hapus
                                         </button>

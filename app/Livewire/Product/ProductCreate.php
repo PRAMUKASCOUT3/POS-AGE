@@ -8,52 +8,61 @@ use Livewire\Component;
 
 class ProductCreate extends Component
 {
-    public $category_id, $name, $brand, $stock, $price_buy, $price_sell, $unit;
+    public $id_category, $name, $brand, $stock, $price_buy, $price_sell, $unit;
     public $code; // Auto-generated product code
 
     // Rules for validation
     protected $rules = [
-        'category_id' => 'required',
-        'name' => 'required|string|max:255',
-        'brand' => 'required|string|max:255',
-        'stock' => 'required|integer',
+        'id_category' => 'required',
+        'name' => 'required|string|max:30',
+        'brand' => 'required|string|max:30',
+        'stock' => 'required|integer|max:5',
         'price_buy' => 'required|numeric',
         'price_sell' => 'required|numeric',
-        'unit' => 'required|string',
+        'unit' => 'required|string|max:20',
     ];
 
     public function mount()
     {
-        $this->code = 'BR' . str_pad(Product::max('id') + 1, 4, '0', STR_PAD_LEFT); // Auto-generate product code
+        $this->code = 'BR' . str_pad(Product::max('id_product') + 1, 4, '0', STR_PAD_LEFT); // Auto-generate product code
     }
 
     // Save the product
     public function save()
     {
         $validatedData = $this->validate([
-            'category_id' => 'required',
-            'name' => 'required|string|max:255',
-            'brand' => 'required|string|max:255',
+            'id_category' => 'required',
+            'name' => 'required|string',
+            'brand' => 'required|string',
             'stock' => 'required|integer',
             'price_buy' => 'required|numeric',
             'price_sell' => 'required|numeric',
             'unit' => 'required|string',
         ]);
 
-        Product::create($validatedData);
+        Product::create([
+            'code' => $this->code,
+            'id_category' => $this->id_category,
+            'name' => $this->name,
+            'brand' => $this->brand,
+            'stock' => $this->stock,
+            'price_buy' => $this->price_buy,
+            'price_sell' => $this->price_sell,
+            'unit' => $this->unit,
+        ]);
 
         toastr()->success('Data Berhasil Ditambahkan!');
 
-        $this->reset(['category_id', 'name', 'brand', 'stock', 'price_buy', 'price_sell', 'unit']);
+        $this->reset(['id_category', 'name', 'brand', 'stock', 'price_buy', 'price_sell', 'unit']);
 
-        $this->code = 'BR' . str_pad(Product::max('id') + 1, 4, '0', STR_PAD_LEFT);
+        $this->code = 'BR' . str_pad(Product::max('id_product') + 1, 4, '0', STR_PAD_LEFT);
 
         return redirect()->route('product.index');
     }
     public function render()
     {
         return view('livewire.product.product-create', [
-            'categories' => Category::all()
+            'category' => Category::all()
         ]);
     }
 }
